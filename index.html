@@ -1,0 +1,8 @@
+---
+layout: default
+---
+<div class="less">
+{% for post in site.posts %}
+    <!-- {{ post.output | replace: "<article>", " --><article>" | replace: "</article>", "</article><!-- " }} -->
+{% endfor %}
+</div>

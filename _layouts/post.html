@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<article>
+    <header>
+        <h2><a href="https://leetcode.com/contest/leetcode-weekly-contest-{{ page.cid }}/">{{ site.titleprefix }}{{ page.title }}</a></h2>
+        <ul>
+            <li>Rank: <strong>{{ page.rank }}</strong> / {{ page.totalrank }}</li>
+            <li>Score: {{ page.score }} / {{ page.totalscore }}</li>
+            <li>Finish Time: {{ page.time | floor | date: "%H:%M:%S" }}</li>
+        </ul>
+    </header>
+    {% for problem in page.problems %}
+        <section>
+            {% capture problem_content %}{% include {{ problem.id }}.md %}{% endcapture %}
+            <div class="problem">{{ problem_content | markdownify }}</div>
+            <span class="result">{% if problem.result == "Accepted" %}<a href="https://github.com/Smart-Hypercube/leetcode/blob/master/_includes/{{ problem.id }}.py">{% endif %}
+                <strong>{{ problem.result }}</strong>
+                {% if problem.time %}
+                    in {{ problem.time | floor | date: "%H:%M:%S" }}
+                {% endif %}
+                {% if problem.wrong %}
+                    with {{ problem.wrong }} wrong submissions
+                {% endif %}
+            {% if problem.result == "Accepted" %}</a>{% endif %}</span>
+            {% if problem.result == "Accepted" %}
+                {% highlight python %}{% include {{ problem.id }}.py %}{% endhighlight %}
+            {% endif %}
+        </section>
+    {% endfor %}
+</article>

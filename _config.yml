@@ -1,0 +1,5 @@
+title: LeetCode Weekly Contests
+titleprefix: "Hypercube's "
+baseurl: ""
+url: "http://leetcode.0x01.me"
+permalink: /:title
