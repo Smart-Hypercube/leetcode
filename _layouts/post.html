@@ -23,9 +23,7 @@ layout: default
                     with {{ problem.wrong }} wrong submissions
                 {% endif %}
             {% if problem.result == "Accepted" %}</a>{% endif %}</span>
-            {% if problem.result == "Accepted" %}
-                {% highlight python %}{% include {{ problem.id }}.py %}{% endhighlight %}
-            {% endif %}
+            {% if problem.result == "Accepted" or problem.solved %}{% highlight python %}{% include {{ problem.id }}.py %}{% endhighlight %}{% endif %}
         </section>
     {% endfor %}
 </article>
