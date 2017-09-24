@@ -3,6 +3,6 @@ layout: default
 ---
 <div class="less">
 {% for post in site.posts %}
-    <!-- {{ post.output | replace: "<article>", " --><article>" | replace: "</article>", "</article><!-- " }} -->
+    <!-- {{ post.output | replace: "<article>", " --><article>" | replace: "</article>", "</article><!-- " | replace: "<section>", "<!-- " | replace: "</section>", " -->" }} -->
 {% endfor %}
 </div>

@@ -1,18 +1,9 @@
-body {
-    margin-top: -100px;
-}
-
 h2 {
-    margin-top: 100px !important;
     text-align: center;
 }
 
 h2 .anchorjs-link {
     display: none;
-}
-
-header {
-    margin-bottom: -60px;
 }
 
 header ul {
